@@ -33,8 +33,8 @@ if __name__ == "__main__":
     score = 0
     for round in rounds:
         elf_choice, my_choice = round.split(' ')
-        index = ord( my_choice ) - ord( 'X' )
-        score += round_score[ elf_choice ][ index ]
+        my_index = ord( my_choice ) - ord( 'X' )
+        score += round_score[ elf_choice ][ my_index ]
     
     print (score)
     

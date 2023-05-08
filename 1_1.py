@@ -7,8 +7,8 @@ if __name__ == "__main__":
     with open(input_file, "r") as file:
         lines = file.read().strip('\n').split('\n\n')
     
-    elf_calories = [ sum( ( int(elf_calories, 10) for elf_calories in line.split('\n') ) ) for line in lines ]
+    elf_calories_cumulative = [ sum( ( int(elf_calories, 10) for elf_calories in line.split('\n') ) ) for line in lines ]
 
-    print ( max(elf_calories) )
+    print ( max(elf_calories_cumulative) )
     
 
