@@ -7,6 +7,8 @@ if __name__ == "__main__":
     with open(file_name, 'r') as file:
         rucksacks = file.read().strip('\n').split('\n')
     
+    # priority 'a' - 'z' -> [1...26]
+    # priority 'A" - 'Z' -> [27..52]
     calc_priority = lambda ch: 1 + ord(ch) - ord('a') if ch.islower() else 27 + ord(ch) - ord('A')
     sum = 0
     for rucksack in rucksacks:
