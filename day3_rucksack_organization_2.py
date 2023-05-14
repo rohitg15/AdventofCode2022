@@ -1,7 +1,7 @@
 import sys
 
 # day 3 part 2 - aoc 2022 https://adventofcode.com/2022/day/3#part2
-if __name__ == "__main__":
+def main():
     file_name = sys.argv[1]
     rucksacks = []
     with open(file_name, 'r') as file:
@@ -19,10 +19,13 @@ if __name__ == "__main__":
 
     # divide input rucksacks into groups of 3
     group_size = 3
-    groups = [ rucksacks[i * group_size: (i + 1) * group_size ] for i in range( len(rucksacks) // 3 ) ]
+    groups = [ rucksacks[i * group_size: (i + 1) * group_size ] for i in range( len(rucksacks) // group_size ) ]
 
     # calculate priority on elements in the set intersection for each group 
-    common_sets = [ set.intersection( set(group[0]), set(group[1]), set(group[2]) ) for group in groups]
-    count = sum( map( calc_priority, common_sets ) )
+    common_sets = ( set.intersection( set(group[0]), set(group[1]), set(group[2]) ) for group in groups )
+    count = sum( calc_priority(common_set) for common_set in common_sets )
     print (count)
+
+if __name__ == "__main__":
+    main()
 
