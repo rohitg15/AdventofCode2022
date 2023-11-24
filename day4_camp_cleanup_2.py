@@ -1,5 +1,4 @@
 import sys
-from typing import List
 
 
 # https://adventofcode.com/2022/day/4#part2
@@ -17,5 +16,5 @@ if __name__ == "__main__":
         first_interval, second_interval = get_interval( section.split(',') )
         count = count + 1 if is_overlapping(first_interval, second_interval) or is_overlapping(second_interval, first_interval) else count
     
-    print (f'count = {count}') 
+    print (f'count = {count}')
 
